@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.sinofool.cordova.plugins.go2native" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.sinofool.cordova.plugins.go2native" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>cordova-go2native-plugin</name>
     <js-module name="cordova-go2native-plugin" src="www/cordova-go2native-plugin.js">
         <clobbers target="Go2Native" />
