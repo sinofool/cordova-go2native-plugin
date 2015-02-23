@@ -1,6 +1,5 @@
 //
 //  Go2NativePlugin.h
-//  1001YE
 //
 //  Created by Bochun Bai on 2/22/15.
 //
@@ -24,3 +23,4 @@
 - (void) initSchema:(CDVInvokedUrlCommand*) command;
 - (BOOL) shouldOverrideLoadWithRequest:(NSURLRequest *) request navigationType:(UIWebViewNavigationType)navigationType;
 @end
+
