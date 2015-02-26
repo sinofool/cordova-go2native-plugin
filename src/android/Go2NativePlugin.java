@@ -19,7 +19,6 @@ public class Go2NativePlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        System.out.println("action: " + action);
         if (action.equals("initSchema")) {
             localSchema = args.getString(0) + "://";
             callbackContext.success();
@@ -31,7 +30,7 @@ public class Go2NativePlugin extends CordovaPlugin {
 
     @Override
     public boolean onOverrideUrlLoading(String url) {
-        if (!url.startsWith(localSchema)) {
+        if (localSchema == null || !url.startsWith(localSchema)) {
             return false;
         }
         String override = "file:///android_asset/www" + url.substring(localSchema.length());
