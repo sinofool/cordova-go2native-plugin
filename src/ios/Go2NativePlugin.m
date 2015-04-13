@@ -13,8 +13,13 @@
 
 - (BOOL) shouldOverrideLoadWithRequest:(NSURLRequest *) request navigationType:(UIWebViewNavigationType)navigationType {
     if ([request.URL.scheme isEqualToString:localSchema]) {
-        NSString* url = [NSString stringWithFormat:@"%@%@", self.nativeBase, request.URL.path];
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+        if (request.URL.query != nil) {
+            NSString* url = [NSString stringWithFormat:@"%@%@?%@", self.nativeBase, request.URL.path, request.URL.query];
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+        } else {
+            NSString* url = [NSString stringWithFormat:@"%@%@", self.nativeBase, request.URL.path];
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+        }
         return YES;
     } else {
         return NO;
