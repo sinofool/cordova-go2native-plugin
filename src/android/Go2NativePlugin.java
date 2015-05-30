@@ -37,4 +37,13 @@ public class Go2NativePlugin extends CordovaPlugin {
         appView.loadUrl(override);
         return true;
     }
+
+    @Override
+    public Boolean shouldAllowNavigation(String url) {
+        if (localSchema != null && url.startsWith(localSchema)) {
+            return true;
+        }
+        return null;
+    }
 }
+
